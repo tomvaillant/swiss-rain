@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.0.4/scrollama.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link href="./style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="header with-video-bg">
+      <!-- <div id="videoBg" class="video-background">
+          <video src="./assets/bg-video.mp4" preload="auto" tabindex="0" playsinline autoplay loop muted></video>
+      </div> -->
+      <div class="hero-content">
+        <h1>Greenland <span style="text-decoration: underline; text-underline-offset: 10px;">Untapped</span></h1>
+        <p class="subhead">But at what cost?</p>
+    </div>
+  </div>
+
+  <div class="editorial-container">
+    <div class="editorial">
+      <!-- <div class="title-content">
+        <h1>A story about Greenland</h1>
+        <p class="subhead">And the tradeoffs of its industrialisation</p>
+        <div class="divider"></div>
+      </div> -->
+      <p>Greenland has largely been untouched by the mining industry due to harsh conditions, however 2023 has shown us that climate models aren’t as precise as we’d hoped and Greenland’s glaciers are melting 100 times faster than previously calculated. The melt of glaciers continues to uncover mineral deposits, the U.S. Congressional Research Service estimated that the Arctic contains one trillion dollars’ worth of precious metals and minerals.</p>
+      <p>The world is in need of a tremendous amount of rare earth minerals to power the green transition and reduce emissions globally, Greenland could contribute to that mineral demand and break China's monopoly.</p>
+      <p>Let's look at the current status and forecasts of the the Greenlandic ice sheet.</p>
+    </div>
+  </div>
+  <div class="spacer"></div>
+
+  <!-- IMAGE SCROLLY MAPS -->
+  <section id="scrolly-images" class="scrolly-container">
+    <div class="sticky-thing">
+      <div class="sticky-inner">
+        <img src="./assets/mass_change.webp">
+      </div>
+    </div>
+    <div class="scrolly-overlay">
+      <div class="step" id="step1">
+        <div>
+          <p>The <span class="step-highlighter is-mass">mass change</span> is significant along the coasts, which is where mineral deposits are being confirmed.</p>
+        </div>
+      </div>
+      <div class="step" id="step2">
+        <p>The <span class="step-highlighter is-thickness">ice thickness</span> overall is also most affected along the coasts, accelerating melt and contributing to mass change.</p>
+      </div>
+      <div class="step" id="step3">
+        <p>This is a 2.5C scenario forecast for the <span class="step-highlighter is-ice">ice sheet</span> in 2037</p>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="editorial-container">
+    <div class="editorial">
+      <h3>The Green Transition</h3>
+      <div class="divider"></div>
+      <p>Increasing mineral demand for EVs and devices is paving the way for Greenland's industrialisation through the development of mining, previously too risky for companies to invest.</p>
+      <p>The figure below outlines the world's mineral needs for two future scenarios.</p>
+    </div>
+    <div class="figure">
+      <img src="./assets/disasters-1.webp">
+    </div>
+    <div class="editorial">
+      <p>Looking at government data we can also confirm that applications and approved licenses for mining exploration in Greenland are increasing rapidly.</p>
+    </div>
+    <div class="figure">
+      <img src="./assets/disasters-2.webp">
+    </div>
+    <div class="editorial">
+      <p>The new government has made mining a core pillar of their development strategy.</p>
+    </div>
+  </div>
+  <div class="spacer"></div>
+
+
+  
+
+<script>  
+
+// FIRST SCROLLY
+d3.select("#step1").on('stepin', (e) => {
+  d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "./assets/rain-1.webp")
+})
+d3.select("#step2").on('stepin', (e) => {
+  d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "./assets/rain-2.webp")
+})
+d3.select("#step3").on('stepin', (e) => {
+  d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "./assets/rain-3.webp")
+})
+
+// SECOND SROLLY
+d3.select("#step4").on('stepin', (e) => {
+  d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "./assets/ice_4.webp")
+})
+d3.select("#step5").on('stepin', (e) => {
+  d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "./assets/ice_8.webp")
+})
+
+
+// SCROLLAMA AND SCROLLER SETUPS
+const scrollerImg = scrollama();
+
+scrollerImg
+  .setup({
+    parent: document.querySelector("#scrolly-images"),
+    step: ".step",
+    offset: 0.6,
+    debug: false,
+  })
+  .onStepEnter(function ({ element, index, direction }) {
+    const event = new CustomEvent("stepin", { detail: { direction: direction } })
+    element.dispatchEvent(event)
+  })
+  .onStepExit(function ({ element, index, direction }) {
+    const event = new CustomEvent("stepout", { detail: { direction: direction } })
+    if (direction === "up" && element.previousElementSibling) {
+      const event = new CustomEvent("stepin", { detail: { direction: direction } })
+      element.previousElementSibling.dispatchEvent(event)
+    }
+  })
+
+</script>
+
+  </body>
+</html>
