@@ -7,54 +7,46 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.0.4/scrollama.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bangers&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 	<link href="./style.css" rel="stylesheet" />
   </head>
 
   <body>
-    <div class="header with-video-bg">
-      <!-- <div id="videoBg" class="video-background">
-          <video src="./assets/bg-video.mp4" preload="auto" tabindex="0" playsinline autoplay loop muted></video>
-      </div> -->
-      <div class="hero-content">
-        <h1>Greenland <span style="text-decoration: underline; text-underline-offset: 10px;">Untapped</span></h1>
-        <p class="subhead">But at what cost?</p>
-    </div>
+  <div class="header">
+    <img src="./assets/rain-1.webp">
   </div>
-
+  <div class="hero-content">
+    <h1>Benny's holidays to Switzerland</h1>
+    <p class="subhead">An organisational nightmare.</p>
+  </div>
   <div class="editorial-container">
     <div class="editorial">
-      <!-- <div class="title-content">
-        <h1>A story about Greenland</h1>
-        <p class="subhead">And the tradeoffs of its industrialisation</p>
-        <div class="divider"></div>
-      </div> -->
-      <p>Greenland has largely been untouched by the mining industry due to harsh conditions, however 2023 has shown us that climate models aren’t as precise as we’d hoped and Greenland’s glaciers are melting 100 times faster than previously calculated. The melt of glaciers continues to uncover mineral deposits, the U.S. Congressional Research Service estimated that the Arctic contains one trillion dollars’ worth of precious metals and minerals.</p>
-      <p>The world is in need of a tremendous amount of rare earth minerals to power the green transition and reduce emissions globally, Greenland could contribute to that mineral demand and break China's monopoly.</p>
-      <p>Let's look at the current status and forecasts of the the Greenlandic ice sheet.</p>
+      <p>Benny is a Canadian living in Ottawa. He's pretty paranoid about safety and hates rain. So after a lot of research he's put together a data-driven guide to visiting Switzerland in the safest, and sunniest possible conditions.</p>
+      <p>When, and where should Benny travel to?</p>
     </div>
   </div>
   <div class="spacer"></div>
-
-  <!-- IMAGE SCROLLY MAPS -->
   <section id="scrolly-images" class="scrolly-container">
     <div class="sticky-thing">
       <div class="sticky-inner">
-        <img src="./assets/mass_change.webp">
+        <img src="./assets/rain-1.webp">
       </div>
     </div>
     <div class="scrolly-overlay">
       <div class="step" id="step1">
         <div>
-          <p>The <span class="step-highlighter is-mass">mass change</span> is significant along the coasts, which is where mineral deposits are being confirmed.</p>
+          <p>He looks at the precipitation sum per month for the last 20 years, with outlier months marked in yellow.</p>
         </div>
       </div>
       <div class="step" id="step2">
-        <p>The <span class="step-highlighter is-thickness">ice thickness</span> overall is also most affected along the coasts, accelerating melt and contributing to mass change.</p>
+        <p>He also digs into rain records for different time periods. Most of these events happened in Ticino, so he won't be travelling there.</p>
+        <p>Although these amounts are tiny compared to rain in India they do cause heavy floods.</p>
+      </div>
+      <div class="step">
+        <p>Flood image</p>
       </div>
       <div class="step" id="step3">
-        <p>This is a 2.5C scenario forecast for the <span class="step-highlighter is-ice">ice sheet</span> in 2037</p>
+        <p>Looking at the data, Benny won't be planning his visit to Switzerland in August. He'll probably go in March when it's snowing instead. Benny likes snow.</p>
       </div>
     </div>
   </section>
@@ -62,31 +54,57 @@
 
   <div class="editorial-container">
     <div class="editorial">
-      <h3>The Green Transition</h3>
-      <div class="divider"></div>
-      <p>Increasing mineral demand for EVs and devices is paving the way for Greenland's industrialisation through the development of mining, previously too risky for companies to invest.</p>
-      <p>The figure below outlines the world's mineral needs for two future scenarios.</p>
+      <p>Benny feels pretty secure about his rain analysis, but is it safe to visit Switzerland in March? Benny looks into deaths from natural disasters in Switzerland over the last few decades to check which month and locations are safest.</p>
     </div>
-    <div class="figure">
-      <img src="./assets/disasters-1.webp">
-    </div>
+
+    <section id="scroller" class="scrolly-container">
+      <div class="sticky-thing">
+        <div class="sticky-inner">
+          <img src="./assets/disasters-2.webp">
+        </div>
+      </div>
+      <div class="scrolly-overlay">
+        <div class="step" id="step4">
+          <div>
+            <p>It seems August is also the most dangerous month, so Benny's feeling good about his earlier decision. To think that people plan holidays without looking at data... Crazy.</p>
+            <p>March is one of the safest months and one of the least rainy, so he'll go then.</p>
+          </div>
+        </div>
+        <div class="step" id="step5">
+          <p>Looking at the data on deaths from natural disasters, Benny sees that total deaths from natural disasters have decreased, which is reassuring.</p>
+        </div>
+        <div class="step">
+          <p>In March there are avalanches however, so he'll avoid all of the dark blue areas on the map for sure. He'll travel to a city, away from landslides and such nonsense.</p>
+        </div>
+      </div>
+    </section>
+
     <div class="editorial">
-      <p>Looking at government data we can also confirm that applications and approved licenses for mining exploration in Greenland are increasing rapidly.</p>
-    </div>
-    <div class="figure">
-      <img src="./assets/disasters-2.webp">
-    </div>
-    <div class="editorial">
-      <p>The new government has made mining a core pillar of their development strategy.</p>
+      <p>At the end of his extremely long rabbit hole, Benny's decided to travel to Zurich in March.</p> 
+      <p>He's feeling pretty smug about his trip when he realizes that he'll have to take a plane to get to Switzerland, Benny really doesn't like flying.</p>
+      <div class="spacer"></div>
+      <h3>Sources</h3>
+      <ul>
+        <li>
+          <a href="https://www.envidat.ch/dataset/number-of-natural-hazard-fatalities-per-year-in-switzerland-since-1946" class="href">ENVIDAT</a>
+        </li>
+        <li>
+          <a href="https://www.meteoswiss.admin.ch/climate/the-climate-of-switzerland/records-and-extremes.html" class="href">METEOSWISS</a>
+        </li>
+        <li>
+          <a href="https://www.bfs.admin.ch/bfs/de/home/statistiken/querschnittsthemen/monitoring-legislaturplanung/alle-indikatoren/leitline-3-sicherheit/schaeden-naturereignisse.assetdetail.28485500.html" class="href">CH STATISTIKEN</a>
+        </li>
+        <li>
+          <a href="https://meteostats.ch/?parameter=Precipitation&period=Year&display=Relative&reference-period=1991-2020&code=SWISS" class="href">METEOSTATS</a>
+        </li>
+        <li>
+          <a href="https://www.wsl.ch/fr/dangers-naturels/comprendre-et-prevoir-les-crues/la-base-de-donnees-suisse-sur-les-dommages-dus-aux-intemperies/#" class="href">WSL</a>
+        </li>
+      </ul>
     </div>
   </div>
-  <div class="spacer"></div>
-
-
-  
 
 <script>  
-
 // FIRST SCROLLY
 d3.select("#step1").on('stepin', (e) => {
   d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "./assets/rain-1.webp")
@@ -100,19 +118,38 @@ d3.select("#step3").on('stepin', (e) => {
 
 // SECOND SROLLY
 d3.select("#step4").on('stepin', (e) => {
-  d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "./assets/ice_4.webp")
+  d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "./assets/disasters-2.webp")
 })
 d3.select("#step5").on('stepin', (e) => {
-  d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "./assets/ice_8.webp")
+  d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "./assets/disasters-1.webp")
 })
 
 
 // SCROLLAMA AND SCROLLER SETUPS
 const scrollerImg = scrollama();
+const scroller = scrollama();
 
 scrollerImg
   .setup({
     parent: document.querySelector("#scrolly-images"),
+    step: ".step",
+    offset: 0.6,
+    debug: false,
+  })
+  .onStepEnter(function ({ element, index, direction }) {
+    const event = new CustomEvent("stepin", { detail: { direction: direction } })
+    element.dispatchEvent(event)
+  })
+  .onStepExit(function ({ element, index, direction }) {
+    const event = new CustomEvent("stepout", { detail: { direction: direction } })
+    if (direction === "up" && element.previousElementSibling) {
+      const event = new CustomEvent("stepin", { detail: { direction: direction } })
+      element.previousElementSibling.dispatchEvent(event)
+    }
+  })
+  scroller
+  .setup({
+    parent: document.querySelector("#scroller"),
     step: ".step",
     offset: 0.6,
     debug: false,
